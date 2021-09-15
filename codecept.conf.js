@@ -39,7 +39,6 @@ exports.config = {
         FileSystem: {},
         Mochawesome: {
             uniqueScreenshotNames: true,
-            screenshotPrefix: 'failed/',
         },
     },
     systems: {
