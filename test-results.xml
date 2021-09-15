@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="5.8940" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-09-15T15:02:29" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="MWE" timestamp="2021-09-15T15:02:29" tests="1" file="/Users/jpmschuler/Documents/workspace/mwe-codeceptjs/tests/example.test.js" time="5.8940" failures="1">
+    <testcase name="MWE: test something @myTag" time="5.8940" classname="test something @myTag">
+      <failure message="The base image is of 720 X 1280 and actual image is of 4527 X 1280. Please use images of same dimensions so as to avoid any unexpected results." type="Error"><![CDATA[Error: The base image is of 720 X 1280 and actual image is of 4527 X 1280. Please use images of same dimensions so as to avoid any unexpected results.
+    at /Users/jpmschuler/Documents/workspace/mwe-codeceptjs/node_modules/codeceptjs-resemblehelper/index.js:95:20
+    at Array.<anonymous> (node_modules/resemblejs/resemble.js:1056:17)
+    at triggerDataUpdate (node_modules/resemblejs/resemble.js:224:43)
+    at onceWeHaveBoth (node_modules/resemblejs/resemble.js:824:21)
+    at onLoadImage (node_modules/resemblejs/resemble.js:304:13)
+    at hiddenImage.onload (node_modules/resemblejs/resemble.js:329:17)
+    at setSource (node_modules/resemblejs/node_modules/canvas/lib/image.js:91:13)
+    at Image.set (node_modules/resemblejs/node_modules/canvas/lib/image.js:62:9)
+    at loadImageData (node_modules/resemblejs/resemble.js:333:33)
+    at compare (node_modules/resemblejs/resemble.js:830:13)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,26 @@
+{
+  "name": "mwe-codeceptjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npx rimraf tests/output",
+    "test": "npx codeceptjs run --debug --steps; npm run checkjson",
+    "checkjson": "node -p \"require('./tests/output/report.json').results[0].suites[0].tests[0].context\"",
+    "postinstall": "patch-package"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "codeceptjs": "3.0.7",
+    "codeceptjs-resemblehelper": "^1.9.4",
+    "codeceptjs-testmailapp-helper": "^1.1.0",
+    "dotenv": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "mocha-multi-reporters": "^1.5.1",
+    "mochawesome": "^6.2.2",
+    "patch-package": "^6.4.7",
+    "playwright": "^1.14.1",
+    "rimraf": "^3.0.2"
+  }
+}
