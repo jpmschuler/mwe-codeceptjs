@@ -8,7 +8,9 @@ on:
 jobs:
   run-codeceptjs:
     name: "CodeceptJS run with Playwright and ResembleHelper"
-    runs-on: jpmschuler/docker-codeceptjs:v1.0.1
+    runs-on: ubuntu-latest
+    container:
+      image: jpmschuler/docker-codeceptjs:v1.0.1
     steps:
       - name: "Run NPM install"
         run: "npm ci"
