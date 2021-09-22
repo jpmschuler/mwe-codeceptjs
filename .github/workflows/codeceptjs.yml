@@ -12,8 +12,7 @@ jobs:
     container:
       image: jpmschuler/docker-codeceptjs:v1.0.1
     steps:
-      - name: "Debug output"
-        run: "pwd; ls -l"
+      - uses: actions/checkout@v2
       - name: "Run NPM install"
         run: "npm ci"
       - name: "Run CodeceptJS"
