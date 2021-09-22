@@ -1,0 +1,24 @@
+---
+name: CodeceptJS
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  run-codeceptjs:
+    name: "CodeceptJS run with Playwright and ResembleHelper"
+    runs-on: jpmschuler/docker-codeceptjs:v1.0.1
+    steps:
+      - name: "Run NPM install"
+        run: "npm ci"
+      - name: "Run CodeceptJS"
+        run: "npm run test"
+      - name: Archive Mochawesome report
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-report
+          path: |
+            tests/output
+    strategy:
+      fail-fast: false
