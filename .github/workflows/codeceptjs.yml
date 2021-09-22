@@ -8,11 +8,10 @@ on:
 jobs:
   run-codeceptjs:
     name: "CodeceptJS run with Playwright and ResembleHelper"
-    runs-on: ubuntu-latest
-    container:
-      image: jpmschuler/docker-codeceptjs:v1.0.1
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - name: "Checkout"
+        uses: actions/checkout@v2
       - name: "Run NPM install"
         run: "npm ci"
       - name: "Run CodeceptJS"
