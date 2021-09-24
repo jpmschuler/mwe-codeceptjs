@@ -2,6 +2,7 @@ Feature('MWE');
 
 Scenario('test something', async ({I}) => {
     let filename = 'mwe-screenshot.png';
+    I.wait(5);
     I.amOnPage("https://www.google.com/");
     await I.saveScreenshot(filename, true).then();
     await I.seeVisualDiff(filename, {
