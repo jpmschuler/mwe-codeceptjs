@@ -6,13 +6,14 @@
   "scripts": {
     "pretest": "npx rimraf tests/output",
     "test": "npx codeceptjs run --debug --steps; npm run checkjson",
+    "test:showBrowser": "npx codeceptjs run --debug --steps  --reporter '' --override '{ \"helpers\": {\"Playwright\": {\"show\": \"true\"}}}'",
     "checkjson": "node -p \"require('./tests/output/report.json').results[0].suites[0].tests[0].context\"",
     "postinstall": "patch-package"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "codeceptjs": "3.0.7",
+    "codeceptjs": "^3.0.7",
     "codeceptjs-resemblehelper": "^1.9.4",
     "codeceptjs-testmailapp-helper": "^1.1.0",
     "dotenv": "^10.0.0",

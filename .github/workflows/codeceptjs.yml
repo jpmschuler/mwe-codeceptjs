@@ -8,7 +8,7 @@ on:
 jobs:
   run-codeceptjs:
     name: "CodeceptJS run with Playwright and ResembleHelper"
-    runs-on: ubuntu-20.04
+    runs-on: mcr.microsoft.com/playwright:focal
     steps:
       - name: "Checkout"
         uses: actions/checkout@v2
@@ -16,7 +16,7 @@ jobs:
         run: "npm ci"
       - name: "Run CodeceptJS"
         run: "npm run test"
-      - name: Archive Mochawesome report
+      - name: Archive report
         uses: actions/upload-artifact@v2
         with:
           name: mochawesome-report

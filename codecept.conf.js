@@ -46,27 +46,6 @@ exports.config = {
         testDomainSuffix: null,
     },
     bootstrap: null,
-    mocha: {
-        reporter: 'mocha-multi-reporters',
-        reporterOptions: {
-            reporterEnabled: 'mochawesome, mocha-junit-reporter',
-            mochawesomeReporterOptions: {
-                reportDir: './tests/output/',
-                reportFilename: 'report',
-                html: true,
-                json: true,
-                charts: true,
-                showFailed: true,
-                showPassed: false,
-                showPending: false,
-                showSkipped: false,
-            },
-            mochaJunitReporterReporterOptions: {
-                mochaFile: './tests/output/report.xml',
-                attachments: true,
-            },
-        },
-    },
     plugins: {
         pauseOnFail: {},
         tryTo: {
