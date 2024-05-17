@@ -1,0 +1,26 @@
+image: jpmschuler/docker-codeceptjs:v1.0.1
+
+stages:
+  - test
+
+cache:
+  paths:
+    # speed up builds by caching dependencies and build artifacts
+    - vendor/
+    - node_modules
+
+tes:
+  image: jpmschuler/docker-codeceptjs:v1.0.1
+  stage: test
+  script:
+    - npm install
+    - npm run test
+  artifacts:
+    paths:
+      - tests/output
+    expire_in: 1 week
+    name: "testArtifacts"
+    expose_as: "CodeceptJS-visualRegression-Test-Result"
+    when: always
+    reports:
+      junit: tests/output/report.xml
