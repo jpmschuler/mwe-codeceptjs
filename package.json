@@ -4,26 +4,22 @@
 	"version": "1.0.0",
 	"author": "",
 	"dependencies": {
-		"@codeceptjs/allure-legacy": "^1.0.2",
-		"allure-commandline": "^2.17.2",
+		"@codeceptjs/configure": "^1.0.6",
 		"codeceptjs": "^3.4.1",
-		"codeceptjs-chai": "^2.3.3",
 		"codeceptjs-pixelmatchhelper": "^1.0.6",
 		"codeceptjs-testmailapp-helper": "^1.1.0",
-		"dotenv": "^16.4.5",
-		"playwright": "^1.36.1",
-		"rimraf": "^5.0.1",
-		"sharp": "^0.33.3"
+		"playwright": "^1.36.1"
 	},
 	"license": "ISC",
 	"main": "index.js",
 	"scripts": {
-		"postinstall": "patch-package",
-		"pretest": "npx rimraf tests/output tests/allure-report tests/allure-results",
-		"test": "npx codeceptjs run --debug --steps",
-		"test:interactive": "npx --no codeceptjs run --grep @currenttodo --debug --steps --bail --colors -p pauseOnFail --reporter '' --override '{ \"helpers\": {\"Playwright\": {\"show\": \"true\"}}}'",
-		"test:generateReport": "npx allure generate --clean tests/allure-results -o tests/allure-report",
-		"test:showBrowser": "npx codeceptjs run --debug --steps  --reporter '' --override '{ \"helpers\": {\"Playwright\": {\"show\": \"true\"}}}'",
-		"test:showReport": "npx http-server tests/allure-report"
+		"test": "pnpm exec codeceptjs run --debug --steps",
+		"test:interactive": "pnpm exec codeceptjs run --grep @currenttodo --debug --steps --bail --colors -p pauseOnFail --reporter '' --override '{ \"helpers\": {\"Playwright\": {\"show\": \"true\"}}}'",
+		"test:showBrowser": "pnpm exec codeceptjs run --debug --steps  --reporter '' --override '{ \"helpers\": {\"Playwright\": {\"show\": \"true\"}}}'"
+	},
+	"devDependencies": {
+		"@types/node": "^25.0.3",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.3"
 	}
 }
